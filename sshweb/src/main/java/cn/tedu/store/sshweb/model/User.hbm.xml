@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-4-24 17:03:06 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.tedu.store.sshweb.model.User" table="sb_USERS">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="regDate" type="java.util.Date">
+            <column name="REG_DATE" />
+        </property>
+        <set name="roles" table="sb_user_role" lazy="false">
+        	<key>
+        		<column name="user_id"></column>
+        	</key>
+        	<many-to-many class="cn.tedu.store.sshweb.model.Role" column="role_id"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

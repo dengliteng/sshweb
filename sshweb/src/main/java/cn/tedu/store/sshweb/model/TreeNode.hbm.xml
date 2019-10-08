@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-5-17 22:07:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.tedu.store.sshweb.model.TreeNode" table="TREE_NODE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="text" type="java.lang.String">
+            <column name="TEXT" />
+        </property>
+        
+        <property name="parentId" type="java.lang.Integer">
+            <column name="PARENT_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

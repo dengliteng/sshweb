@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2019-5-20 22:19:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.tedu.store.sshweb.model.Role" table="sb_ROLES">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="roleName" type="java.lang.String">
+            <column name="ROLE_NAME" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <set name="permissions" table="sb_role_permissions" lazy="false">
+        	<key >
+        		<column name="Role_id"></column>
+        	</key>
+        	<many-to-many class="cn.tedu.store.sshweb.model.Permission" column="permission_id"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
